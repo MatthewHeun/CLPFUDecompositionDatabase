@@ -1,12 +1,37 @@
 # Decomposition papers (Guevara, Aramendia, Heun) meeting notes
 
 
-## 17 December 2024
+
+
+## 16 May 2025
 
 ### Review of previous action items
-- [ ] MKH: Implementing higher-level functions in the `IEATools` package.  In progress.
-- [ ] MKH: Implement algorithms for Statistical differences and Transfers.
+- [x] MKH: Implementing higher-level functions in the `IEATools` package.  In progress.
+- [x] MKH: Implement algorithms for Statistical differences and Transfers.
            Reallocate only to energy sector in the U_EIOU matrix.
+
+### Status reports
+* Matt
+    * Finished `IEATools::reallocate_statistical_differences()`
+* Zeus
+    * Wrote a rough draft of a paper
+    
+### Next steps for MKH
+1. Warn if Statistical differences > other consumption
+2. Fix Statistical differences for a few countries: USA, Russia, India, Ghana
+3. Look at efficiencies for a few countries; make the .pdf file I made before
+4. Fix Statistical differences for all countries
+5. Look at efficiencies for all countries
+
+### Next steps for ZG
+1. Look for economic data for the model
+
+### Next meeting: 11 AM Matt's time, 30 June 2025
+
+
+
+## 17 December 2024
+
 
 ### Discussion
 * We worked through the reallocation examples for Stat diffs.
