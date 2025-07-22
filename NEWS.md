@@ -4,6 +4,10 @@ output: html_document
 ---
 
 
+* This is no longer a package, 
+  bringing this pipeline in line with PFUPipeline2.
+
+
 ## CLPFUDecompositionDatabase 0.1.2 (2024-02-07) 
 
 * Developed new way to do aggregations using file in inst/.

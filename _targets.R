@@ -1,5 +1,3 @@
-
-library(targets)
 # targets::tar_make() to run the pipeline in a single thread.
 # targets::tar_make_future(workers = 8) to execute across multiple cores.
 # targets::tar_make(callr_function = NULL) to debug.
@@ -7,52 +5,23 @@ library(targets)
 # targets::tar_invalidate(<<target_name>>) to re-compute <<target_name>> and its dependents.
 # targets::tar_destroy() to start over with everything,
 
+# Get local machine setup information ------------------------------------------
+# Duplicate file _pl_setup_template.R and
+# rename as _pl_setup.R.
+# Modify details for your setup, as needed.
+source("_pl_setup.R")
+
+# Load packages required to define the pipeline:
+library(tarchetypes)
+library(targets)
 
 
-
-
-
-
-
-# Set control parameters for the pipeline.
-
-# Set the countries to be analyzed.
-# countries <- PFUPipelineTools::canonical_countries |> as.character()
-# countries <- c("USA", "WMBK")
-# countries <- c("USA", "ITA")
-# countries <- c("GBR", "USA", "MEX")
-# countries <- c("ZWE", "USA", "WRLD")
-# countries <- "USA"
-# countries <- "WRLD"
-# countries <- "CHNM"
-# countries <- "GHA"
-# countries <- "all" # Run all countries in the PSUT target.
-countries <- c(PFUPipelineTools::canonical_countries, "WRLD") |> as.character()
-# Countries with unique allocation data plus BEL and TUR (for Pierre).
-# countries <- c("BRA", "CAN", "CHNM", "DEU", "DNK", "ESP", "FRA", "GBR", "GHA", "GRC",
-#                "HKG", "HND", "IDN", "IND", "JOR", "JPN", "KOR", "MEX", "NOR", "PRT",
-#                "RUS", "USA", "WABK", "WMBK", "ZAF", "BEL", "TUR")
-
-
-# Set the years to be analyzed.
-years <- 1960:2020
-# years <- 2002
-# years <- 1971:1973
-# years <- 1971:1978
-# years <- 1971
-# years <- 1960:1961
-# years <- 2016:2018
 
 # Set aggregation files
 aggregation_tables_dir <- "aggregation_tables"
 targeted_aggregations_file <- system.file(aggregation_tables_dir, "targeted_aggregations.xlsx",
                                           package = "CLPFUDecompositionDatabase")
 
-# Set the database version to be used for this analysis
-database_version <- "v1.2"
-
-# Should we release the results?
-release <- FALSE
 
 # End user-adjustable parameters.
 
