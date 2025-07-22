@@ -1,6 +1,34 @@
 # Decomposition papers (Guevara, Aramendia, Heun) meeting notes
 
 
+## 11 February 2025
+
+### Review of previous action items
+- [ ] MKH: Implementing higher-level functions in the `IEATools` package.  In progress.
+- [ ] MKH: Implement algorithms for Statistical differences and Transfers.
+           Reallocate only to energy sector in the U_EIOU matrix. In progress.
+
+### Discussion
+
+
+### Next meeting: 10 AM Matt's time 6 March 2025
+
+
+
+## 14 January 2025
+
+### Review of previous action items
+- [ ] MKH: Implementing higher-level functions in the `IEATools` package.  In progress.
+- [ ] MKH: Implement algorithms for Statistical differences and Transfers.
+           Reallocate only to energy sector in the U_EIOU matrix. In progress.
+           
+### Discussion
+* We reviewed MKH's complete algorighm in Excel and decided that would be implemented.
+
+### Next memeting: 10 AM MKH time, Thursday, 30 January 2025
+
+
+
 ## 17 December 2024
 
 ### Review of previous action items
