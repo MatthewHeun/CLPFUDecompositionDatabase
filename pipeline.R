@@ -67,6 +67,15 @@ list(
 
 
 
+  # Add a warning if Statistical differences > other consumption
+
+
+  # Add distribution of statistical differences using the Recca package
+
+
+  # Calculate and report efficiencies right in the pipeline
+
+
 
   # # Etai ---------------------------------------------------------------------
   #
@@ -97,13 +106,6 @@ list(
 
 
 
-  # Add a warning if Statistical differences > other consumption
-
-
-  # Add distribution of statistical differences using the Recca package
-
-
-  # Calculate and report efficiencies right in the pipeline
 
 
 
