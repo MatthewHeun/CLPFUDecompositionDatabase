@@ -176,8 +176,8 @@ targeted_aggregation <- function(psut_df,
   }
 
   out |>
-    tidyr::pivot_wider(names_from = matnames_colname,
-                       values_from = matvals_colname)
+    tidyr::pivot_wider(names_from = dplyr::all_of(matnames_colname),
+                       values_from = dplyr::all_of(matvals_colname))
 }
 
 
