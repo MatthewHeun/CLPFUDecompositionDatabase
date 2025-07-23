@@ -12,52 +12,53 @@ list(
   targets::tar_target_raw("LocalStorage", local_storage),
   # targets::tar_target_raw("Release", release),
 
-  # Aggregations ---------------------------------------------------------------
-
-  # Read the aggregation file
-  targets::tar_target_raw(
-    "TargetedAggregationsFilePath",
-    targeted_aggregations_path,
-    format = "file"
-  ),
-
-  # Industry aggregations -----------------------------------------------------
-  targets::tar_target(
-    IndustryAggregationMap,
-    load_agg_map(TargetedAggregationsFilePath,
-                 aggregation_tab = "industry_aggregations")
-    ),
-
-  # targets::tar_target(
-  #   name = PSUT_Agg_In,
-  #   command = targeted_aggregation(psut_df = PSUTByCountry,
-  #                                  aggregation_map = IndustryAggregationMaps,
-  #                                  margin = "Industry"),
-  #   pattern = quote(map(PSUTByCountry)),
-
-
-  # ## Product aggregations ------------------------------------------------------
-  # targets::tar_target(
-  #   ProductAggregationMap,
-  #   load_agg_map(TargetedAggregationsFile,
-  #                aggregation_tab = "product_aggregations")),
-
-
   # PSUT -----------------------------------------------------------------------
 
   # Read the downloaded file.
   # Source the download.R to get the required data.
   # Pull in the PSUT data frame
   targets::tar_target_raw(
-    "PSUTReAllFilePath",
+    "PSUTReAllPath",
     psut_re_all_path,
     format = "file"
   ),
 
   targets::tar_target(
     PSUTReAll,
-    readRDS(PSUTReAllFilePath)
-  )
+    readRDS(PSUTReAllPath)
+  ),
+
+
+  # Aggregations ---------------------------------------------------------------
+
+  # Read the aggregation file
+  targets::tar_target_raw(
+    "TargetedAggregationsPath",
+    targeted_aggregations_path,
+    format = "file"
+  ),
+
+  ## Industry aggregations -----------------------------------------------------
+  targets::tar_target(
+    IndustryAggregationMap,
+    load_agg_map(TargetedAggregationsPath,
+                 aggregation_tab = "industry_aggregations")
+  ),
+
+  targets::tar_target(
+    name = PSUT_Agg_In,
+    command = targeted_aggregation(psut_df = PSUTReAll,
+                                   aggregation_map = IndustryAggregationMap,
+                                   margin = "Industry")),
+
+
+  ## Product aggregations ------------------------------------------------------
+  targets::tar_target(
+    ProductAggregationMap,
+    load_agg_map(TargetedAggregationsPath,
+                 aggregation_tab = "product_aggregations"))
+
+
 
   # # Etai ---------------------------------------------------------------------
   #
