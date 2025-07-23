@@ -41,7 +41,8 @@ load_agg_map <- function(aggregation_file,
   agg_table |>
     # Create a nested data frame where the aggregation tables
     # are now per Country and per Year.
-    tidyr::nest(.by = c(country_colname, year_colname), .key = "agg_table") |>
+    tidyr::nest(.by = dplyr::all_of(c(country_colname, year_colname)),
+                .key = "agg_table") |>
     dplyr::mutate(
       agg_map = lapply(X = .data[["agg_table"]],
                        FUN = matsbyname::agg_table_to_agg_map,

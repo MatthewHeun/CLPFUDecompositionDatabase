@@ -51,6 +51,9 @@ dir.create(local_storage, recursive = TRUE, showWarnings = FALSE)
 
 
 # Files ------------------------------------------------------------------------
+# Aggregation details
+targeted_aggregations_path <- file.path("data",
+                                        "aggregation_tables",
+                                        "targeted_aggregations.xlsx")
+# Data
 psut_re_all_path <- file.path(local_storage, "downloaded_data.rds")
-
-
