@@ -8,11 +8,9 @@ list(
   # These targets are invariant across incoming psut_releases
   targets::tar_target_raw("Countries", list(countries)),
   targets::tar_target_raw("Years", list(years)),
-  targets::tar_target_raw("DatabaseVersion",database_version),
-  targets::tar_target_raw("PinboardFolder", pipeline_releases_folder),
-  targets::tar_target_raw("PipelineCachesFolder", pipeline_caches_folder),
-  targets::tar_target_raw("ReportsDestFolder", reports_dest_folder),
-  targets::tar_target_raw("Release", release),
+  targets::tar_target_raw("DatabaseVersion", database_version),
+  targets::tar_target_raw("LocalStorage", local_storage),
+  # targets::tar_target_raw("Release", release),
 
   # PSUT ---------------------------------------------------------------------
 

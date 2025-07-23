@@ -34,25 +34,25 @@ targeted_aggregations_file <- system.file(aggregation_tables_dir, "targeted_aggr
 # mostly for input and output locations.
 #
 
-sys_info <- Sys.info()
-if (startsWith(sys_info[["nodename"]], "Mac")) {
-  setup <- PFUSetup::get_abs_paths()
-} else if (endsWith(sys_info[["nodename"]], "arc4.leeds.ac.uk")) {
-  uname <- sys_info[["user"]]
-  setup <- PFUSetup::get_abs_paths(home_path <- "/nobackup",
-                                   dropbox_path = uname)
-  # Set the location for the _targets folder.
-  targets::tar_config_set(store = file.path(setup[["output_data_path"]], "_targets/"))
-} else {
-  stop("Unknown system in _targets.R for PFUAggDatabase. Can't set input and output locations.")
-}
+# sys_info <- Sys.info()
+# if (startsWith(sys_info[["nodename"]], "Mac")) {
+#   setup <- PFUSetup::get_abs_paths()
+# } else if (endsWith(sys_info[["nodename"]], "arc4.leeds.ac.uk")) {
+#   uname <- sys_info[["user"]]
+#   setup <- PFUSetup::get_abs_paths(home_path <- "/nobackup",
+#                                    dropbox_path = uname)
+#   # Set the location for the _targets folder.
+#   targets::tar_config_set(store = file.path(setup[["output_data_path"]], "_targets/"))
+# } else {
+#   stop("Unknown system in _targets.R for PFUAggDatabase. Can't set input and output locations.")
+# }
 
 # Set up for multithreaded work on the local machine.
-future::plan(future.callr::callr)
+# future::plan(future.callr::callr)
 
 # Set options for all targets.
 targets::tar_option_set(
-  packages = "CLPFUDecompositionDatabase",
+  packages = NULL,
   # Indicate that storage and retrieval of subtargets
   # should be done by the worker thread,
   # not the main thread.
@@ -66,15 +66,12 @@ targets::tar_option_set(
   garbage_collection = TRUE
 )
 
-# Pull in the pipeline
-CLPFUDecompositionDatabase::get_pipeline(countries = countries,
-                                         years = years,
-                                         database_version = database_version,
-                                         targeted_aggregations_file = targeted_aggregations_file,
-                                         pipeline_releases_folder = setup[["pipeline_releases_folder"]],
-                                         pipeline_caches_folder = setup[["pipeline_caches_folder"]],
-                                         reports_dest_folder = setup[["reports_dest_folder"]],
-                                         release = release)
+# Source scripts ---------------------------------------------------------------
+tar_source()
+
+
+# Source the pipeline ----------------------------------------------------------
+source("pipeline.R")
 
 
 
