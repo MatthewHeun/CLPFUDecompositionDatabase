@@ -11,6 +11,7 @@
 # Modify details for your setup, as needed.
 source("_pl_setup.R")
 
+
 # Load packages required to define the pipeline:
 library(tarchetypes)
 library(targets)
@@ -24,8 +25,6 @@ targeted_aggregations_file <- system.file(aggregation_tables_dir, "targeted_aggr
 
 
 # End user-adjustable parameters.
-
-
 
 
 
@@ -66,8 +65,10 @@ targets::tar_option_set(
   garbage_collection = TRUE
 )
 
+
 # Source scripts ---------------------------------------------------------------
 tar_source()
+
 
 
 # Source the pipeline ----------------------------------------------------------
