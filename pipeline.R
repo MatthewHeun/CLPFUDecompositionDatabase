@@ -56,7 +56,15 @@ list(
   targets::tar_target(
     ProductAggregationMap,
     load_agg_map(TargetedAggregationsPath,
-                 aggregation_tab = "product_aggregations"))
+                 aggregation_tab = "product_aggregations")),
+
+  targets::tar_target(
+    name = PSUT_Agg_InPr,
+    command = targeted_aggregation(psut_df = PSUT_Agg_In,
+                                   aggregation_map = ProductAggregationMap,
+                                   margin = "Product")
+  )
+
 
 
 
