@@ -12,7 +12,8 @@ list(
   targets::tar_target_raw("LocalStorage", local_storage),
   # targets::tar_target_raw("Release", release),
 
-  # PSUT -----------------------------------------------------------------------
+
+  # Read PSUT file -------------------------------------------------------------
 
   # Read the downloaded file.
   # Source the download.R to get the required data.
@@ -29,9 +30,9 @@ list(
   ),
 
 
-  # Aggregations ---------------------------------------------------------------
+  # Create targeted aggregations -----------------------------------------------
 
-  # Read the aggregation file
+  ## Read the aggregation file -------------------------------------------------
   targets::tar_target_raw(
     "TargetedAggregationsPath",
     targeted_aggregations_path,
@@ -47,9 +48,9 @@ list(
 
   targets::tar_target(
     name = PSUT_Agg_In,
-    command = targeted_aggregation(psut_df = PSUTReAll,
-                                   aggregation_map = IndustryAggregationMap,
-                                   margin = "Industry")),
+    targeted_aggregation(psut_df = PSUTReAll,
+                         aggregation_map = IndustryAggregationMap,
+                         margin = "Industry")),
 
 
   ## Product aggregations ------------------------------------------------------
@@ -60,17 +61,17 @@ list(
 
   targets::tar_target(
     name = PSUT_Agg_InPr,
-    command = targeted_aggregation(psut_df = PSUT_Agg_In,
-                                   aggregation_map = ProductAggregationMap,
-                                   margin = "Product")
+    targeted_aggregation(psut_df = PSUT_Agg_In,
+                         aggregation_map = ProductAggregationMap,
+                         margin = "Product")
+  ),
+
+
+  # Reallocate statistical differences -----------------------------------------
+  targets::tar_target(
+    PSUTReallocated,
+    reallocate(PSUT_Agg_InPr)
   )
-
-
-
-  # Add a warning if Statistical differences > other consumption
-
-
-  # Add distribution of statistical differences using the Recca package
 
 
   # Calculate and report efficiencies right in the pipeline
