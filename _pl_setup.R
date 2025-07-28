@@ -22,7 +22,8 @@ database_version <- "v2.1a2"
 # countries <- "WRLD"
 # countries <- "CHNM"
 # countries <- "GHA"
-countries <- c("GHA", "USA")
+# countries <- c("GHA", "USA")
+countries <- c("USA", "RUS", "IND", "GHA")
 # Countries with unique allocation data plus BEL and TUR (for Pierre).
 # countries <- c("BRA", "CAN", "CHNM", "DEU", "DNK", "ESP", "FRA", "GBR", "GHA", "GRC",
 #                "HKG", "HND", "IDN", "IND", "JOR", "JPN", "KOR", "MEX", "NOR", "PRT",
@@ -32,9 +33,9 @@ countries <- c("GHA", "USA")
 # Years ------------------------------------------------------------------------
 
 # Set the years to be analyzed.
-# years <- 1960:2020
+years <- 1960:2020
 # years <- 2002
-years <- 1971:1973
+# years <- 1971:1973
 # years <- 1971:1978
 # years <- 1971
 # years <- 1960:1961

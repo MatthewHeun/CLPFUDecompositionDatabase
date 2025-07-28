@@ -17,8 +17,6 @@
 #' @export
 create_iea_eta_i_reports <- function(eta_i_df, reports_dest_folder) {
 
-  browser()
-
   # Expand the machine efficiency data.
   expanded_eta_i_data <- eta_i_df |>
     dplyr::filter(LastStage == "Final", EnergyType == "E") |>
