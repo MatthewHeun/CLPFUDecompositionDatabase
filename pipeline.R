@@ -71,11 +71,21 @@ list(
   targets::tar_target(
     PSUTReallocated,
     reallocate(PSUT_Agg_InPr)
+  ),
+
+
+  # Calculate machine efficiencies
+  targets::tar_target(
+    Etai,
+    Recca::calc_eta_i(PSUTReallocated)
+  ),
+
+
+  # Write a report of machine efficiencies
+  targets::tar_target(
+    EtaReports,
+    create_iea_eta_i_reports(Etai, reports_dest_folder = LocalStorage)
   )
-
-
-  # Calculate and report efficiencies right in the pipeline
-
 
 
   # # Etai ---------------------------------------------------------------------

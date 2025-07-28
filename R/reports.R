@@ -15,24 +15,13 @@
 #'         creating reports.
 #'
 #' @export
-create_iea_eta_i_reports <- function(eta_i_df, reports_dest_folder, release = FALSE) {
-  # Eliminate compile warnings
-  IEAMW <- NULL
-  Last.stage <- NULL
-  Energy.type <- NULL
-  matvals <- NULL
-  Year <- NULL
-  eta_i <- NULL
-  year_eta_i <- NULL
-  Country <- NULL
-  machine <- NULL
+create_iea_eta_i_reports <- function(eta_i_df, reports_dest_folder) {
 
-  if (!release) {
-    return("Release not requested.")
-  }
+  browser()
+
   # Expand the machine efficiency data.
   expanded_eta_i_data <- eta_i_df |>
-    dplyr::filter(IEAMW == "IEA", Last.stage == "Final", Energy.type == "E") |>
+    dplyr::filter(LastStage == "Final", EnergyType == "E") |>
     # Delete columns containing original PSUT matrices (if present)
     dplyr::mutate(
       R = NULL, U = NULL, U_feed = NULL, U_EIOU = NULL, r_EIOU = NULL,
@@ -52,8 +41,9 @@ create_iea_eta_i_reports <- function(eta_i_df, reports_dest_folder, release = FA
   # Nest the efficiency data so that each item in the
   # column is a tibble of data for the graph.
   nested_eta_i_data <- expanded_eta_i_data |>
-    tidyr::nest(.by = tidyr::all_of(c("Country", "Method", "Energy.type",
-                                      "Last.stage", "IEAMW", "machine")),
+    tidyr::nest(.by = tidyr::all_of(c("Country", "Method", "EnergyType",
+                                      "LastStage", "Dataset",
+                                      "ValidFromVersion", "ValidToVersion", "machine")),
                 .key = "year_eta_i")
 
   # The function to create one graph
@@ -79,7 +69,7 @@ create_iea_eta_i_reports <- function(eta_i_df, reports_dest_folder, release = FA
       # plots = purrr::map(.x = year_eta_i, .f = create_plot)
       plots = purrr::pmap(.l = list(tibble_data = year_eta_i,
                                     country_name = Country,
-                                    energy_type = Energy.type,
+                                    energy_type = EnergyType,
                                     machine_name = machine),
                           .f = create_eta_i_plot)
     )

@@ -1,3 +1,14 @@
+#' Reallocate statistical differences
+#'
+#' This function reallocates statistical differences
+#' to other sectors or industries
+#' using [Recca::reallocate_statistical_differences()].
+#'
+#' @param PSUT A data frame of PSUT matrices
+#'
+#' @returns `PSUT` with reallocated statistical differences.
+#'
+#' @export
 reallocate <- function(PSUT) {
   PSUT |>
     Recca::reallocate_statistical_differences() |>
