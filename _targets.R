@@ -18,10 +18,6 @@ library(targets)
 
 
 
-# Set aggregation files
-aggregation_tables_dir <- "aggregation_tables"
-targeted_aggregations_file <- system.file(aggregation_tables_dir, "targeted_aggregations.xlsx",
-                                          package = "CLPFUDecompositionDatabase")
 
 
 # End user-adjustable parameters.
