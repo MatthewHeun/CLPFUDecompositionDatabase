@@ -13,7 +13,7 @@ database_version <- "v2.1a2"
 
 # Set the countries to be analyzed.
 # countries <- c(PFUPipelineTools::canonical_countries, "WRLD") |> as.character()
-# countries <- PFUPipelineTools::canonical_countries |> as.character()
+countries <- PFUPipelineTools::canonical_countries |> as.character()
 # countries <- c("USA", "WMBK")
 # countries <- c("USA", "ITA")
 # countries <- c("GBR", "USA", "MEX")
@@ -23,7 +23,7 @@ database_version <- "v2.1a2"
 # countries <- "CHNM"
 # countries <- "GHA"
 # countries <- c("GHA", "USA")
-countries <- c("USA", "RUS", "IND", "GHA")
+# countries <- c("USA", "RUS", "IND", "GHA")
 # Countries with unique allocation data plus BEL and TUR (for Pierre).
 # countries <- c("BRA", "CAN", "CHNM", "DEU", "DNK", "ESP", "FRA", "GBR", "GHA", "GRC",
 #                "HKG", "HND", "IDN", "IND", "JOR", "JPN", "KOR", "MEX", "NOR", "PRT",

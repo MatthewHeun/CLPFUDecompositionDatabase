@@ -2,6 +2,35 @@
 
 
 
+
+## 30 July 2025
+
+### Review of previous action items
+
+- [x] MKH: Warn if Statistical differences > other consumption
+- [x] MKH: Fix Statistical differences for a few countries: USA, Russia, India, Ghana
+- [x] MKH: Look at efficiencies for a few countries; make the .pdf file I made before
+- [ ] MKH: Fix Statistical differences for all countries
+- [ ] MKH: Look at efficiencies for all countries
+- [ ] ZG: Look for economic data for the model
+
+### Discussion
+
+We reviewed the aggregation maps and made a few changes.
+
+
+### New action items
+
+None.
+
+
+### Next meeting
+
+11 AM Matt's time Tue 12 Aug 2025
+
+
+
+
 ## 30 June 2025
 
 This turned into a check in meeting as
