@@ -3,6 +3,31 @@
 
 
 
+
+## 12 August 2025
+
+### Review of previous action items
+
+- [ ] MKH: Fix Statistical differences for all countries
+- [ ] MKH: Look at efficiencies for all countries
+- [ ] ZG: Look for economic data for the model
+
+### Discussion
+
+
+
+### New action items
+
+
+### Next meeting
+
+
+
+
+
+
+
+
 ## 30 July 2025
 
 ### Review of previous action items
