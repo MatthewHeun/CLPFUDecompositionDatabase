@@ -11,7 +11,7 @@
 #' @export
 reallocate <- function(PSUT) {
   PSUT |>
-    Recca::reallocate_statistical_differences() |>
+    Recca::reallocate_statistical_differences(tol = 1e-1) |>
     dplyr::mutate(
       # Get rid of old columns
       R = NULL,

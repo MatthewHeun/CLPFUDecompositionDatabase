@@ -91,11 +91,15 @@ create_iea_eta_i_reports <- function(eta_i_df, reports_dest_folder) {
   }
 
   # Save plots to PDF files for each machine
-  lapply(names(split_by_machines_df), function(machine) {
-    save_plots_to_pdf(plot = split_by_machines_df[[machine]]$plots,
-                      machine_name = machine)
-  })
+  # lapply(names(split_by_machines_df), function(machine) {
+  #   save_plots_to_pdf(plot = split_by_machines_df[[machine]]$plots,
+  #                     machine_name = machine)
+  # })
 
+  for (this_machine in names(split_by_machines_df)) {
+    save_plots_to_pdf(plot = split_by_machines_df[[this_machine]]$plots,
+                      machine_name = this_machine)
+  }
   return(paste0("eta_i reports saved at `", reports_dest_folder, "`."))
 }
 

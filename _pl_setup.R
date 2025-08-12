@@ -7,13 +7,13 @@
 
 
 # Database version -------------------------------------------------------------
-database_version <- "v2.1a2"
+database_version <- "v2.1a3"
 
 # Countries --------------------------------------------------------------------
 
 # Set the countries to be analyzed.
-# countries <- c(PFUPipelineTools::canonical_countries, "WRLD") |> as.character()
-countries <- PFUPipelineTools::canonical_countries |> as.character()
+countries <- c(PFUPipelineTools::canonical_countries, "WRLD") |> as.character()
+# countries <- PFUPipelineTools::canonical_countries |> as.character()
 # countries <- c("USA", "WMBK")
 # countries <- c("USA", "ITA")
 # countries <- c("GBR", "USA", "MEX")
@@ -29,6 +29,17 @@ countries <- PFUPipelineTools::canonical_countries |> as.character()
 #                "HKG", "HND", "IDN", "IND", "JOR", "JPN", "KOR", "MEX", "NOR", "PRT",
 #                "RUS", "USA", "WABK", "WMBK", "ZAF", "BEL", "TUR")
 
+# countries <- c("BRA", "CAN", "CHNM", "DEU", "DNK", "ESP", "FRA", "GBR", "GHA", "GRC")
+
+# countries <- c("BRA", "CAN", "CHNM", "DEU")
+
+# countries <- c("BRA", "CAN")
+
+# countries <- c("CHNM", "DEU") # Energy not conserved
+
+# countries <- "CHNM"  # Works
+
+# countries <- "DEU"
 
 # Years ------------------------------------------------------------------------
 
@@ -57,4 +68,4 @@ targeted_aggregations_path <- file.path("data",
                                         "aggregation_tables",
                                         "targeted_aggregations.xlsx")
 # Data
-psut_re_all_path <- file.path(local_storage, "downloaded_data.rds")
+psut_re_all_path <- file.path(local_storage, "downloaded_psut_re_all_data.rds")
