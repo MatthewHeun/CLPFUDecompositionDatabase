@@ -8,16 +8,35 @@
 
 ### Review of previous action items
 
-- [ ] MKH: Fix Statistical differences for all countries
-- [ ] MKH: Look at efficiencies for all countries
+- [x] MKH: Fix Statistical differences for all countries
+- [x] MKH: Look at efficiencies for all countries
 - [ ] ZG: Look for economic data for the model
 
 ### Discussion
 
+- Zeus reviewed the graphs
+- 80% of graphs are good (stable)
+- Didn't see anything very shocking. 
+  Most important energy industries are stable.
+- There are some structural factors in some graphs
+  when some industries started using different technologies
+- There are also some IEA differences in reporting and assumptions.
+- Things are probably good enough for future work.
+- Next steps: Need to push to the useful stage.
 
 
 ### New action items
-
+- [ ] MKH: Send efficiency information to Zeus in Excel file.
+           Just the graphs in table form.
+- [ ] MKH: Assess steps needed to integrate the new aggregations
+           (Renewable electricity, Iron industry (energy)) into 
+           the pipeline.
+           Discuss with Emmanuel.
+- [ ] MKH: Assess modifications to pipeline 
+           to use different final energy matrices. 
+           Discuss with Emmanuel.
+           
+           
 
 ### Next meeting
 
