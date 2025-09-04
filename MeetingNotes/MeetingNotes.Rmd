@@ -1,6 +1,37 @@
 # Decomposition papers (Guevara, Aramendia, Heun) meeting notes
 
 
+## 4 September 2025
+
+### Review of previous action items
+
+- [x] ZG: Look for economic data for the model. 
+          Zeus looked a while ago and realized that we need the 
+          "world indicators" dataset from the IEA.
+- [ ] MKH: Send efficiency information to Zeus in Excel file.
+           Just the graphs in table form.
+- [x] MKH: Assess steps needed to integrate the new aggregations
+           (Renewable electricity, Iron industry (energy)) into 
+           the pipeline.
+- [x] MKH: Assess modifications to pipeline 
+           to use different final energy matrices. 
+           Discuss with Emmanuel.
+
+### Discussion
+
+* We discussed next steps and how to move forward 
+  on analyses even if it will take MKH a while to 
+  move functions from the pipeline into a new PFUAnalysisTools package.
+
+### New action items
+
+- [ ] EA: Get IEA "world indicators" dataset.  Send to Zeus.
+- [ ] MKH: Move one function from PFUPipeline2 to new PFUAnalysisTools package.
+           Make sure the pipeline still works.
+- [ ] ZG: Visualize efficiency results sent by MKH.
+- [ ] MKH: Send Final Energy from two countries and two years to Zeus.
+           Later, we will be able to send more countries, more years, 
+           and useful, and exergy.
 
 
 
