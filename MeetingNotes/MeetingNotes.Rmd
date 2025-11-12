@@ -1,6 +1,27 @@
 # Decomposition papers (Guevara, Aramendia, Heun) meeting notes
 
 
+## 6 November 2025
+
+### Review of previous action items
+
+- [ ] EA: Get IEA "world indicators" dataset.  Send to Zeus.
+- [ ] MKH: Move one function from PFUPipeline2 to new PFUAnalysisTools package.
+           Make sure the pipeline still works.
+- [ ] ZG: Visualize efficiency results sent by MKH.
+- [ ] MKH: Send Final Energy from two countries and two years to Zeus.
+           Later, we will be able to send more countries, more years, 
+           and useful, and exergy.
+- [ ] MKH: Send Zeus examples of allocation and efficiency matrices
+           for Ghana and Mexico for same years in Excel files and matsindf format.
+- [x] MKH: Send Zeus aggregation file (targeted_aggregations.xlsx)
+
+### Discussion
+
+
+### New action items
+
+
 
 ## 22 October 2025
 
@@ -15,7 +36,6 @@
 - [ ] MKH: Send Final Energy from two countries and two years to Zeus.
            Later, we will be able to send more countries, more years, 
            and useful, and exergy.
-
 
 ### New action items
 
