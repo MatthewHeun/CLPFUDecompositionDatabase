@@ -19,3 +19,25 @@ data_for_zeus |>
 
 ReallocatedECCs <- readRDS("~/Desktop/For Zeus/ReallocatedECCs.rds")
 ReallocatedECCs$R[[1]] |> as.matrix() |> View()
+
+# Now also gather the allocation matrices and
+# efficiency vectors for the same years.
+
+Cmats <- PFUPipelineTools::pl_filter_collect("Cmats",
+                                              Country %in% c("MEX", "GHA"),
+                                              Year %in% 2015:2020,
+                                              collect = TRUE,
+                                              conn = PFUPipelineTools::get_mexerdb_conn(user = "dbcreator")) |>
+  dplyr::mutate(
+    rowsumsCY = matsbyname::rowsums_byname(C_Y),
+    rowsumsCEIOU = matsbyname::rowsums_byname(C_EIOU),
+    WorksheetNames = paste(Country, EnergyType, Year, sep = "_")
+  )
+
+etafuvecs <- PFUPipelineTools::pl_filter_collect("Etafuvecs",
+                                                 Country %in% c("MEX", "GHA"),
+                                                 Year %in% 2015:2020,
+                                                 collect = TRUE,
+                                                 conn = PFUPipelineTools::get_mexerdb_conn(user = "dbcreator"))
+
+
