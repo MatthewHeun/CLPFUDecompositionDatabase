@@ -1,6 +1,24 @@
 # Decomposition papers (Guevara, Aramendia, Heun) meeting notes
 
 
+
+## 9 January 2026
+
+### Review of previous action items
+
+- [ ] MKH: Move one function from PFUPipeline2 to new PFUAnalysisTools package.
+           Make sure the pipeline still works.
+- [ ] ZG: Visualize efficiency results sent by MKH.
+
+### Discussion
+
+Zeus started the analysis with a toy model.
+Next step is working with the actual data Matt sent.
+
+### New action items
+
+
+
 ## 4 December 2025
 
 ### Review of previous action items
