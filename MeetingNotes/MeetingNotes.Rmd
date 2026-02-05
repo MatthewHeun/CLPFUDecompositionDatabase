@@ -1,6 +1,11 @@
 # Decomposition papers (Guevara, Aramendia, Heun) meeting notes
 
 
+## 5 February 2026
+
+- [x] MKH: Send Zeus vignettes for matsindf and matsbyname packages.
+
+
 
 ## 9 January 2026
 
